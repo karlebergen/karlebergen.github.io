@@ -4,6 +4,7 @@ title: Understanding Confidence Intervals
 subtitle: A step by step guide
 tags: [confidence Intervals]
 ---
+### OH FUN NEW TITLE
 
 ## Understanding Confidence Intervals: A Step-by-Step Guide
 

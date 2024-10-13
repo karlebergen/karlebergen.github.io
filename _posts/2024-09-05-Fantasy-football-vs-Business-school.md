@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Intersection of Fantasy Football Commissioner and Business School Learning
-subtitle: Learn how to manage
+subtitle: Learning how to manage
 categories: [fantasy football, business, leadership]
 ---
 

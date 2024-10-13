@@ -2,7 +2,7 @@
 layout: post
 title: Understanding Confidence Intervals
 subtitle: A step by step guide
-tags: [confidence Intervals]
+tags: [Confidence Intervals]
 ---
 
 ## Understanding Confidence Intervals: A Step-by-Step Guide

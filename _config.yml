@@ -6,7 +6,7 @@ email: karel@ebergen.com
 description: "Student at UCLA"
 keyword: "Business school, marketing guru"
 url: "https://tmonster.github.io" # your host, for absolute URL
-baseurl: "/my_blog_2" # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
 future: true

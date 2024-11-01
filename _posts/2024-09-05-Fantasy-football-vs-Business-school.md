@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Intersection of Fantasy Football Commissioner and Business School Learning
-subtitle: Learning how to manage
+subtitle: Every Trade has a winner
 categories: [fantasy football, business, leadership]
 ---
 

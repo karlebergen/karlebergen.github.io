@@ -13,9 +13,10 @@ future: true
 
 # SNS settings
 RSS: false
-github_username: Karel
+github_username: karlebergen
 twitter_username: KEbergen
 linkedin_username:  karel-ebergen
+youtube_username: understudy7157
 #facebook_username:  Karel
 
 

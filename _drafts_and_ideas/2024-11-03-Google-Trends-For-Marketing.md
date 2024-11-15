@@ -5,6 +5,11 @@ subtitle: Google Trends is useful and necessary
 categories: [marketing, google trends]
 ---
 
+
+What's better? ChatGPT or Google Trends?
+
+I've written a script to return to me google trends data based on some question I have, and I throw the same question into ChatGPT.
+
 # Leveraging Google Trends for Entertainment Marketing Success
 
 In the dynamic world of entertainment, staying in tune with audience preferences is crucial for creators, marketers, and brands. One invaluable tool that can help you tap into what audiences are craving is Google Trends. This powerful resource provides insights into search behaviors, enabling you to refine your marketing strategies and engage your audience effectively. In this blog post, we’ll explore how to harness Google Trends specifically for entertainment marketing.

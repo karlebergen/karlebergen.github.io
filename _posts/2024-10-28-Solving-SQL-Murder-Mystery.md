@@ -100,6 +100,7 @@ UNION
     AND address_street_name = 'Franklin Ave'
 );
 ```
+test test
 Also, not really want I want, this is an innefficient query as well, since it needs to scan the person table twice. With another prompt, and a hint to use a correlated subquery, ChatGPT finally has a similar answer to mine
 ```SQL
 SELECT *

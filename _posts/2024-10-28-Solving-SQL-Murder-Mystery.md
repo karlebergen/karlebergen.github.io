@@ -8,15 +8,14 @@ tags: [Analytics, SQL]
 
 ### The Challenge
 
-I am currently in business school and have been learning many new skills. One is SQL for data analysis, and another is finding out what AI tools are best to aide with tasks like Data Analysis. As an exercise for myself and an experiment into the SQL capabilities of ChatGPT, I decided to solve the interactive [SQL Murder Mystery](https://mystery.knightlab.com) myself, and to see how ChatGPT would fair. The goal was to brush up on my SQL abilities, and to see if ChatGPT could solve the mystery by itself. Since I am testing ChatGPT's SQL abilities, I made the rule for myself that I could not give ChatGPT SQL specific hints or instructions to start. This would defeat the purpose of using an AI to solve data analysis. If I knew what the SQL query should look like, I might as well type the SQL query myself.
+I am currently in business school and have been learning many new skills. One is SQL for data analysis, and another is how to best utilize AI tools with tasks like Data Analysis. As an exercise for myself and an experiment into the SQL capabilities of ChatGPT, I decided to solve the interactive [SQL Murder Mystery](https://mystery.knightlab.com) myself, and to see how ChatGPT would fair. The goal was to brush up on my SQL abilities, and to see if ChatGPT could solve the mystery by itself. Since I am testing ChatGPT's SQL abilities, I made the rule for myself that I could not give ChatGPT SQL specific hints or instructions to start. This would defeat the purpose of using an AI to solve data analysis. If I knew what the SQL query should look like, I might as well type the SQL query myself. I am using ChatGPT-4 in this challenge.
 
 Without further ado, let's start. 
 
 ### Getting Report Data
-
 #### Me, a human. 
 
-After taking a look at the schemam, I can see there is a `crime_scene_report` table. Let's take a look at that.
+After taking a look at the schema, I can see there is a `crime_scene_report` table. Let's take a look at that.
 
 ![Schema]({{"/img/murder_mystery_schema.png", | relative_url }})
 
@@ -24,7 +23,10 @@ After taking a look at the schemam, I can see there is a `crime_scene_report` ta
 Let's take a look at the `crime_scene_report` with the following query.
 
 ```sql
-SELECT * FROM crime_scene_report where city = 'SQL City' and date='20180115';
+SELECT * 
+FROM crime_scene_report 
+WHERE city = 'SQL City' 
+  AND date ='20180115';
 ```
 
 #### ChatGPT
@@ -50,9 +52,9 @@ The two queries are fairly similar, so there is nothing to note. The result is b
 
 Now we can find the witnesses,
 
-#### Me. A human.
+#### Me, a human.
 
-I want to find both witnesses in one go. To do this, I had to figure out how to write a correlated subquery, since the person with at the end of Northwestern Dr. has the highest address number, but I don't know what the highest house number is.
+I want to find both witnesses in with one query. To do this, I had to figure out how to write a correlated subquery, since the person with at the end of Northwestern Dr. has the highest address number, but I don't know what the highest house number is, and I don't wnat to look it up before hand.
 
 ```sql
 SELECT * 
@@ -86,7 +88,7 @@ WHERE name LIKE 'Annabel%'
   AND address_street_name = 'Franklin Ave';
 ```
 
-These queries work, but it's no fun copy-pasting many queries, so I prompted ChatGPT to give me one query to find both witnesses, and this was the result.
+These queries work, but copy-pasting many queries is not scalable. It wouldn't make sense in a business setting for ChatGPT to perform one million point lookups for records when there is a way to do a bulk lookup. Therefore, I prompted ChatGPT to give me one query to find both witnesses, and this was the result.
 
 ```sql
 (
@@ -105,7 +107,7 @@ UNION
 );
 ```
 
-Also, not really want I want, this is an innefficient query as well, since it needs to scan the person table twice. With another prompt, and a hint to use a correlated subquery, ChatGPT finally has a similar answer to mine
+Also, not really want I want, since this query is innefficient as well it will scan the person table twice. With another prompt, and a hint to use a correlated subquery, ChatGPT finally has a similar answer to mine
 ```sql
 SELECT *
 FROM person
@@ -118,7 +120,7 @@ WHERE
   OR 
   (name = 'Annabel' AND address_street_name = 'Franklin Ave');
 ```
-But this is ALSO wrong, the filter `name = "Annabel"` is too strict! It shoudl be `name like "Annabel%"`. We will let ChatGPT slide on this though.
+But this is ALSO wrong, the filter `name = "Annabel"` is technically too strict. It should be `name like "Annabel%"`. We will let ChatGPT slide on this though.
 
 ##### Results
 
@@ -135,7 +137,7 @@ After fixing ChatGPT's query, we get the following results.
 
 Now that we know the people, we can take a look at the transcripts. These queries are easy, since we have the person ids.
 
-#### Me, a human
+#### Me, a human.
 
 Now let's look and see if they have any interview transcripts
 
@@ -177,8 +179,7 @@ Now let's look at their check in/check out times, along with
 
 ### Finding the Killer
 
-#### Me, a human
-
+#### Me, a human.
 Again, I want to write just one query, this is what I came up with.
 
 ```sql
@@ -261,8 +262,7 @@ Seems like Jeremy Bowers is our guy. Let's look at his interview transcript to r
 
 ### Finding the Confession
 
-#### Me, a human
-
+#### Me, a human.
 ```sql
 SELECT * FROM 
 interview, person
@@ -304,7 +304,7 @@ Seems like there is a bigger fish behind this. From the transcript, we know the 
 Let's try again a single query to find the real killer.
 
 ```sql
-SELECT * FROM
+SELECT person.name FROM
 person,
 drivers_license,
 income, 
@@ -352,7 +352,7 @@ WHERE (height = 65 OR height = 67)  -- Height conditions
   AND car_model = 'Tesla Model S'; -- Car condition
 ```
 
-This also doesn't make sense since height is not a column on person, but it is on driverse_license. Relaying this error to ChatGPT gives me the following query as another option.
+This also doesn't make sense since height is not a column on person, but it is on drivers_license. Relaying this error to ChatGPT gives me the following query as another option.
 ```sql
 SELECT *
 FROM person
@@ -361,9 +361,14 @@ WHERE name LIKE '%Annabel%' OR name LIKE '%Jeremy%';  -- Adjust as needed to fil
 This is just way off. At this point I feel like I am spending more time herding ChatGPT to the correct answer than coming up with the answer myself. 
 
 
-### Result,
+### Result
 
-Miranda Priestly! Looks like the fictional boss of Vogue magazine FROM the movie Devil Wears Prada is our killer. She has no interview, so I think we reached the end of the exercise.
+|name    |
+|-------|
+|Miranda Priestly   |
+
+
+Miranda Priestly! Looks like the fictional boss of Vogue magazine from the movie Devil Wears Prada is our killer. She has no interview, so I think we reached the end of the exercise.
 
 
 ### Conclusion

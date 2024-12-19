@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Intersection of Fantasy Football Commissioner and Business School Learning
+title: The Intersection of being a Fantasy Football Commissioner and Business School Concepts
 subtitle: Every Trade has a winner
 categories: [fantasy football, business, leadership]
 ---

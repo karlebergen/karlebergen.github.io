@@ -8,8 +8,9 @@ Know your customer. I've developed a game for myself called, the customer is sma
 - Add, everyone is smart (I hope). At leas to the point where they can read and compare things with their own experiences.
 
 The customer is smart,
-- Think about certian IT solutions. Customer is usually asking for specific functionalities
-
+- Think about certain IT solutions. Customer is usually asking for specific functionalities, they know what they want.
 
 But the customer is also dumb
-- If you offer a $25 gift card it's possible they take the bait. 
+- If you offer a $25 off if they renew they may actually renew, when $25 is only 0.1% of the price.
+
+

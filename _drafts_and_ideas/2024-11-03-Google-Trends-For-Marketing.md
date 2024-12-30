@@ -6,6 +6,8 @@ categories: [marketing, google trends]
 ---
 
 
+GOOGLE trends vs. ChatGPT or Claude
+
 What's better? ChatGPT or Google Trends?
 
 I've written a script to return to me google trends data based on some question I have, and I throw the same question into ChatGPT.

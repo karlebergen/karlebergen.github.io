@@ -8,4 +8,4 @@ tags: [AI, other stuff]
 
 1. Writers are needed because they have fingers
 
-If writers 
+If writers  blah blah blah
